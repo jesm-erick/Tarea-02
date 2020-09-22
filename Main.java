@@ -23,11 +23,22 @@ public class Main {
             System.out.println("You chosed: " + opt);
             input.nextLine(); // Limpiar el buffer
             switch (opt) {
-                case 1: System.out.println("Opcion 1 elejida");
-                break;
-                case 2: System.out.println("Opcion 2 elejida");
-                break;
-                default: System.out.println("Opcion no valida");
+                case 1: 
+                    System.out.println("Opcion 1 elejida");
+                    Person p = new Person();
+                    System.out.print("Ingrese nombre:");
+                    p.setName(input.nextLine());
+                    System.out.print("Ingrese sexo:");
+                    p.setSex(input.nextLine());
+
+                    System.out.println("name= " + p.getName() +" \t sex= " + p.getSex() );
+                    p.laugh();
+                    break;
+                case 2: 
+                    System.out.println("Opcion 2 elejida");
+                    break;
+                default: 
+                    System.out.println("Opcion no valida");
             
             }
         }while (opt != 0);
