@@ -2,11 +2,17 @@ import entities.Person;
 
 import java.util.Scanner;
 
-import coche.Coche;
+import Data.PersonData;
+
 
 public class Main {
 
     public static void main(String[] args) {
+        PersonData data= new PersonData();
+        data.create(new Person("Juan"));
+        data.create(new Person("Juan2"));
+        data.list("");
+        
         Scanner input = new Scanner(System.in);
         //System.out.print("Ingrese nombre:");
         //String name= input.nextLine();
