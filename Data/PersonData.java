@@ -25,8 +25,13 @@ public class PersonData {
         System.out.println("get");
         return d;
     }
-    // update(Person, int): void
-    // delete(int): void
+    public void Update(int Person) {
+        return;
+    }
+    public void delete(int id) {
+        
+    }
+    
 
     
 }

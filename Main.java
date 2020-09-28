@@ -11,7 +11,7 @@ public class Main {
         PersonData data= new PersonData();
         data.create(new Person("Juan"));
         data.create(new Person("Juan2"));
-        data.list("");
+        data.list("filter");
         
         Scanner input = new Scanner(System.in);
         //System.out.print("Ingrese nombre:");
