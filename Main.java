@@ -8,15 +8,8 @@ import Data.PersonData;
 public class Main {
 
     public static void main(String[] args) {
-        PersonData data= new PersonData();
-        data.create(new Person("Juan"));
-        data.create(new Person("Juan2"));
-        data.list("filter");
-        
+        PersonData data = new PersonData();
         Scanner input = new Scanner(System.in);
-        //System.out.print("Ingrese nombre:");
-        //String name= input.nextLine();
-        //System.out.println("escribiste: "+name);
         int opt = 0;
         do{
             System.out.println("***** CRUD PERSON *****");
@@ -29,27 +22,30 @@ public class Main {
             System.out.println("You chosed: " + opt);
             input.nextLine(); // Limpiar el buffer
             switch (opt) {
-                case 1: 
-                    System.out.println("Opcion 1 elejida");
-                    Person p = new Person();
-                    System.out.print("Ingrese nombre:");
+                case 1:
+                    System.out.println("Listado de personas ");
+                    for (Person d : data.list("")) {
+                        System.out.println(d.getId() + "\t" + d.getName());
+                    }
+                    
+                    break;
+                case 2:
+                    System.out.println("Nueva persona ");
+                    Person p= new Person();
+                    System.out.print("name: ");
                     p.setName(input.nextLine());
-                    System.out.print("Ingrese sexo:");
-                    p.setSex(input.nextLine());
 
-                    System.out.println("name= " + p.getName() +" \t sex= " + p.getSex() );
-                    p.laugh();
+                    data.create(p);
                     break;
-                case 2: 
-                    System.out.println("Opcion 2 elejida");
-                    break;
+                case 3:
+                    System.out.println("Eliminar persona ");                    
+                    System.out.print("id: ");
+                    data.delete(input.nextInt());
                 default: 
                     System.out.println("Opcion no valida");
             
             }
         }while (opt != 0);
-
-
-
     }
+
 }
