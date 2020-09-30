@@ -13,9 +13,11 @@ public class Main {
         int opt = 0;
         do{
             System.out.println("***** CRUD PERSON *****");
-            System.out.println("1 List ");
-            System.out.println("2 New ");
-            System.out.println("3 Delete ");
+            System.out.println("1 Listar ");
+            System.out.println("2 Nuevo ");
+            System.out.println("3 Borrar ");
+            System.out.println("4 Get byID ");
+            System.out.println("5 update ");
             System.out.println("0 Exit ");
             System.out.println("Choice option: ");
             opt = input.nextInt();
@@ -27,13 +29,13 @@ public class Main {
                     for (Person d : data.list("")) {
                         System.out.println(d.getId() + "\t" + d.getName());
                     }
-                    
                     break;
                 case 2:
                     System.out.println("Nueva persona ");
                     Person p= new Person();
-                    System.out.print("name: ");
+                    System.out.print("nombre: ");
                     p.setName(input.nextLine());
+                 
 
                     data.create(p);
                     break;
@@ -41,6 +43,20 @@ public class Main {
                     System.out.println("Eliminar persona ");                    
                     System.out.print("id: ");
                     data.delete(input.nextInt());
+                    break;
+                case 4:
+                System.out.print("Ingrese el id del objeto: ");
+                data.getListElement(input.nextInt());
+                break;
+                case 5:
+                    System.out.println("Ingresa el id: ");
+                    int id = input.nextInt();
+                    System.out.println("Ingresa el nombre: ");
+                    String name = input.next();
+                    System.out.println("Ingresa la edad: ");
+                    int age = input.nextInt();
+                    data.update(id, name, age);
+                    break;
                 default: 
                     System.out.println("Opcion no valida");
             
