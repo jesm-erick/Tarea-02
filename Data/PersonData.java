@@ -5,22 +5,22 @@ import java.util.List;
 import entities.Person;
 
 public class PersonData {
-    List<Person> lis= new ArrayList <Person>();
+    public static List<Person> lista= new ArrayList <Person>();
     int id=0;
 
      public void  create(Person p) {
         p.setId(++id);
-        lis.add(p); 
+        lista.add(p); 
      }
      public List<Person> list(String filter){
-        return lis;
+        return lista;
          
      }
      public Person get(int id) {
         int index=0;
-        for (Person d : lis) {
+        for (Person d : lista) {
             if (d.getId() == id ) {
-                return lis.get(index);
+                return lista.get(index);
             }
             index++;
         }
@@ -29,14 +29,14 @@ public class PersonData {
     public void delete(int id) {
         Person d = get(id);
         if (d != null) {
-            lis.remove(d);
+            lista.remove(d);
         } else {
             System.out.print("No existe");
         }
     }
     
     public void getListElement(int id) {
-        for (Person person: lis) {
+        for (Person person: lista) {
             if (person.getId() == id) {
                 System.out.println(person.getId() + "\t"  + person.getId() + "\t" + person.getName());
             }

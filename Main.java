@@ -1,5 +1,6 @@
 import entities.Person;
 
+import java.util.List;
 import java.util.Scanner;
 
 import Data.PersonData;
@@ -26,8 +27,10 @@ public class Main {
             switch (opt) {
                 case 1:
                     System.out.println("Listado de personas ");
+                    List<Person> lis = data.lista;
+                    System.out.println("ID\t Nombre\t Direccion\t DNI");
                     for (Person d : data.list("")) {
-                        System.out.println(d.getId() + "\t" + d.getName()+ "\t" +d.getDireccion() +"\t" +d.getDNI());
+                        System.out.println(d.getId() + "\t" + d.getName()+ "\t" + d.getDireccion()+ "\t" + d.getDNI());
                     }
                     break;
                 case 2:
