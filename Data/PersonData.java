@@ -34,15 +34,7 @@ public class PersonData {
             System.out.print("No existe");
         }
     }
-    public void update(int id, String name, int age) {
-        for (Person person: lis) {
-            if (person.getId() == id) {
-                System.out.println("Ya se cambió");
-            }else {
-                System.out.println("No se cambió correctamente");
-            }
-        }
-    }
+    
     public void getListElement(int id) {
         for (Person person: lis) {
             if (person.getId() == id) {

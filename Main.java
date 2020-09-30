@@ -16,7 +16,7 @@ public class Main {
             System.out.println("1 Listar ");
             System.out.println("2 Nuevo ");
             System.out.println("3 Borrar ");
-            System.out.println("4 Get byID ");
+            System.out.println("4 Get byID(seleccionar) ");
             System.out.println("5 update ");
             System.out.println("0 Exit ");
             System.out.println("Choice option: ");
@@ -27,7 +27,7 @@ public class Main {
                 case 1:
                     System.out.println("Listado de personas ");
                     for (Person d : data.list("")) {
-                        System.out.println(d.getId() + "\t" + d.getName());
+                        System.out.println(d.getId() + "\t" + d.getName()+ "\t" +d.getDireccion() +"\t" +d.getDNI());
                     }
                     break;
                 case 2:
@@ -35,8 +35,10 @@ public class Main {
                     Person p= new Person();
                     System.out.print("nombre: ");
                     p.setName(input.nextLine());
-                 
-
+                    System.out.println("Ingrese la direccion: ");
+                    p.setDireccion(input.nextLine());
+                    System.out.println("Ingrese su DNI: ");
+                    p.setDNI(input.nextInt());
                     data.create(p);
                     break;
                 case 3:
@@ -49,14 +51,7 @@ public class Main {
                 data.getListElement(input.nextInt());
                 break;
                 case 5:
-                    System.out.println("Ingresa el id: ");
-                    int id = input.nextInt();
-                    System.out.println("Ingresa el nombre: ");
-                    String name = input.next();
-                    System.out.println("Ingresa la edad: ");
-                    int age = input.nextInt();
-                    data.update(id, name, age);
-                    break;
+                    
                 default: 
                     System.out.println("Opcion no valida");
             

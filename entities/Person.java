@@ -2,6 +2,8 @@ package entities;
 
 public class Person {
     int id;
+    int DNI;
+    String direccion;
     String name;
     String sex;
     
@@ -41,6 +43,21 @@ public class Person {
 
     public void setId(int id) {
         this.id = id;
-    }   
+    }
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    public int getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(int DNI) {
+        this.DNI = DNI;
+    }
+    
     
 }
