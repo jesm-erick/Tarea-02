@@ -50,8 +50,14 @@ public class Main {
                     data.delete(input.nextInt());
                     break;
                 case 4:
-                System.out.print("Ingrese el id del objeto: ");
-                data.getListElement(input.nextInt());
+                System.out.println("get persona ");                    
+                    System.out.print("id: ");
+                    Person d = data.get(input.nextInt());
+                    System.out.println("Id: "+d.getId());
+                    System.out.println("Name: "+d.getName());
+                    System.out.println("Direccion: "+d.getDireccion());
+                    System.out.println("DNI: "+d.getDNI());
+
                 break;
                 case 5:
                     
