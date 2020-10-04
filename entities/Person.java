@@ -2,8 +2,7 @@ package entities;
 
 public class Person {
     int id;
-    int DNI;
-    String direccion;
+    int age;
     String name;
     String sex;
     
@@ -21,6 +20,23 @@ public class Person {
     public void laugh() {
         System.out.println( name + " jejeje!");
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public String getName() {
         return name;
     }
@@ -35,28 +51,6 @@ public class Person {
 
     public void setSex(String sex) {
         this.sex = sex;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-    public int getDNI() {
-        return DNI;
-    }
-
-    public void setDNI(int DNI) {
-        this.DNI = DNI;
     }
     
     
