@@ -1,13 +1,15 @@
 package Data;
-
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 import entities.Person;
+import java.util.Iterator;
 
 public class PersonData {
     public static List<Person> lista= new ArrayList <Person>();
     
     int id=0;
+    Scanner sdf = new Scanner(System.in);
 
      public void  create(Person p) {
         p.setId(++id);
@@ -45,11 +47,12 @@ public class PersonData {
 
     }
     public void delete(int id) {
-        for (Person d : lista) {
-            if (id == d.getId()) {
-                lista.remove(d);
-                System.out.println("Eliminado de la lista " + d.getName());
-                
+        String r = new String();
+        Iterator<Person> personIterator = lista.iterator();
+        while(personIterator.hasNext()){
+            Person perslis = personIterator.next();
+            if (perslis.getId() == id){
+                personIterator.remove();
             }
         }
     }

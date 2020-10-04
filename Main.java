@@ -17,7 +17,7 @@ public class Main {
             System.out.println("1 Listar ");
             System.out.println("2 Nuevo ");
             System.out.println("3 Borrar ");
-            System.out.println("4 Get byID(seleccionar) ");
+            System.out.println("4 Get byID ");
             System.out.println("5 update ");
             System.out.println("0 Exit ");
             System.out.println("Choice option: ");
@@ -34,7 +34,7 @@ public class Main {
                     }
                     break;
                 case 2:
-                    System.out.println("Nueva persona ");
+                    System.out.println("ingrese una Nueva persona ");
                     Person p = new Person();
                     System.out.print("name: ");
                     p.setName(input.nextLine());
@@ -51,13 +51,16 @@ public class Main {
                     }
                     break;
                 case 3:
-                    System.out.println("Eliminar persona ");
-                    System.out.print("id: ");
+                    System.out.println("Eleminar persona");
+                    System.out.print("Ingrese ID a eliminar: ");
                     data.delete(input.nextInt());
+                    System.out.println("se elemino correctamente");
                     input.nextLine();
-                    break;
+                    
+                    
+                break;
                 case 4:
-                    System.out.println("get persona ");
+                    System.out.println("get Persona");
                     System.out.print("id: ");
                     Person d = data.get(input.nextInt());
                     System.out.println("Id: " + d.getId());
@@ -84,6 +87,7 @@ public class Main {
                         input.nextLine(); // Limpiar el buffer
                         System.out.print("new name: ");
                         per.setName(input.nextLine());
+                        data.update(per);
                         
                         System.out.print("new sex: ");
                         per.setSex(input.nextLine());
@@ -93,7 +97,7 @@ public class Main {
                         try {
                             per.setAge(input.nextInt());
                             data.update(per);
-                            System.out.print("se cambio correctamente ");
+                            System.out.println("se cambio correctamente ");
                         } catch (Exception e) {
                             input.nextLine(); // Limpiar el buffer
                             System.out.print("Edad debe ser entero, no se cambio");
